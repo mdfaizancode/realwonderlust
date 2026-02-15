@@ -5,7 +5,7 @@
    
       <br>
     <h3>Create a New Listing</h3>
-    <form method="POST" action="/listings">
+    <form method="POST" action="/listings" novalidate class="needs-validation">
   
       <div class="mb-3">
         <label for="label "  class="form-label">Title</label>
@@ -13,7 +13,8 @@
         name="listing[title]" 
         placeholder="Add a catchy title" 
         type="text" 
-        class="form-control" />
+        class="form-control" 
+        required />
       </div>
       
       <div class="mb-3">
@@ -21,8 +22,8 @@
         <textarea
          name="listing[description]"
          placeholder="enter Description"
-         class="form-control">
-       </textarea> 
+         class="form-control"
+         required ></textarea> 
       </div>
        
      <div class="mb-3">
@@ -31,7 +32,8 @@
         name="listing[image]"
         placeholder="enter image URL/Link"
         type="text"
-        class="form-control"/>
+        class="form-control"
+        required />
     </div>
 
     <div class="row">
@@ -40,7 +42,8 @@
       <input name="listing[price]" 
        placeholder="1200"
        type="number" 
-       class="form-control"/>
+       class="form-control"
+       required />
        </div>
       
        <div class="mb-3 col-md-8">
@@ -48,7 +51,8 @@
       <input name="listing[country]"
        placeholder="India" 
        type="text"
-        class="form-control"/>
+        class="form-control"
+        required />
      </div>
     </div>
 
@@ -59,7 +63,8 @@
         name="listing[location]"
         placeholder="Kashmir"
         type="text"
-        class="form-control"/>
+        class="form-control"
+        required />
      </div>
 
      
