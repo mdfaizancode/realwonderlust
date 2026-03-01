@@ -12,8 +12,10 @@ const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js"); 
 
-const listings = require("./routes/listing.js");
-const reviews = require("./routes/review.js");
+const listingsRouter = require("./routes/listing.js");
+const reviewsRouter = require("./routes/review.js");
+const userRouter = require("./routes/user.js");
+
 
 
 
@@ -50,9 +52,9 @@ const sessionOption = {
 };
 
 
-app.get("/", (req, res) => {
-  res.send("Hi, I am root");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hi, I am root");
+// });
 
 
 app.use(session(sessionOption));
@@ -85,8 +87,9 @@ app.get("/demouser", async(req,res)=>{
 
 
 
-app.use("/listings", listings);
-app.use("/listings/:id/reviews" , reviews);
+app.use("/listings", listingsRouter);
+app.use("/listings/:id/reviews" , reviewsRouter);
+app.use("/", userRouter);
 
 app.get("/test", async (req,res)=>{
   const data = await Listing.find({});
